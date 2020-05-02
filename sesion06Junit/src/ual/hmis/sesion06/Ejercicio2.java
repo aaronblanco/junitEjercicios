@@ -1,24 +1,34 @@
 package ual.hmis.sesion06;
 
 public class Ejercicio2 {
-	public boolean login (String username, String password){
-		// comprobar que sean distintos de vacio
-		if (username.isEmpty() || password.isEmpty())
-			return false;
-		// comprobar que la longitud sea < 30
-		if (username.length()>= 30 || password.length()>=30)
-			return false;
-		// llamar al método de la bbdd
-		return compruebaLoginEnBD(username, password);
+	/**
+	 * Campo numTreinta.
+	 */
+	private final int numTreinta = 30;
 
+	/**
+	 * @param user usuario.
+	 * @param password pass.
+	 * @return llamar al método de la bbdd.
+	 */
+	public boolean login(String user, String password) {
+		if (user.isEmpty() || password.isEmpty()) {
+			return false;
+		} else if (user.length() >= numTreinta || password.length() >= numTreinta) {
+			return false;
+		}
+		return compruebaLoginEnBD(user, password);
 	}
 
-	public boolean compruebaLoginEnBD
-	(String username, String password){
-		// método mock (simulado)
-		if (username.equals("user") && password.equals("pass"))
+	/**
+	 * @param user usuario.
+	 * @param password pass.
+	 * @return método mock (simulado).
+	 */
+	public boolean compruebaLoginEnBD(String user, String password) {
+		if (user.equals("user") && password.equals("pass")) {
 			return true;
-		else
-			return false;
+		}
+		return false;
 	}
 }
