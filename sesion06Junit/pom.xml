@@ -34,19 +34,6 @@
 				<version>3.2.0</version>
 			</plugin>
 			<plugin>
-				<groupId>org.owasp</groupId>
-				<artifactId>dependency-check-maven</artifactId>
-				<version>5.3.2</version>
-				<configuration>
-					<skipTestScope>false</skipTestScope>
-					<formats>
-						<format>HTML</format>
-						<format>XML</format>
-					</formats>
-				</configuration>
-				
-			</plugin>
-			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>0.8.5</version>
@@ -95,9 +82,8 @@
 				<version>3.2.0</version>
 				<configuration>
 					<source>8</source>
-				</configuration>			
+				</configuration>
 			</plugin>
-
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -169,12 +155,16 @@
 				<version>3.0.0</version>
 			</plugin>
 
- 			<plugin>
+			<plugin>
 				<groupId>org.owasp</groupId>
 				<artifactId>dependency-check-maven</artifactId>
 				<version>5.3.2</version>
 				<configuration>
 					<skipTestScope>false</skipTestScope>
+					<formats>
+						<format>HTML</format>
+						<format>XML</format>
+					</formats>
 				</configuration>
 				<reportSets>
 					<reportSet>
